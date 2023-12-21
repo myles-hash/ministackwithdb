@@ -16,6 +16,8 @@ form.addEventListener("submit", async function(event){
   form.reset();
 
   getMessages();
+
+  scrollToBottom();
 });
 
 async function getMessages(){
@@ -38,6 +40,15 @@ async function getMessages(){
         messageContainer.appendChild(h3);
         messageContainer.appendChild(p);
     });
+
 }
+
+function scrollToBottom() {
+  const messageContainer = document.getElementById("messageContainer");
+  setTimeout(() => {
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+  }, 50);
+}
+
 
 getMessages();
