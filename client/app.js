@@ -47,7 +47,7 @@ function scrollToBottom() {
   const messageContainer = document.getElementById("messageContainer");
   setTimeout(() => {
     messageContainer.scrollTop = messageContainer.scrollHeight;
-  }, 50);
+  }, 100);
 }
 
 
