@@ -13,6 +13,20 @@ app.get("/",(request,response) => {
     response.json('Looking at root route!')
 });
 
+
+app.get("/messages", function (request, response) {
+    let mesIDs = [];
+  
+    // check if the user has provided a query in the URL (/jokes?id=2)
+    if (request.query.id) {
+      mesIDs = db
+        .prepare(`SELECT * FROM messages WHERE id=${request.query.id}`)
+        .all();
+    } else {
+      // if the URL has no query, get ALL the jokes
+      mesIDs = db.prepare("SELECT * FROM messages").all();
+    }
+});
 app.get("/messages",(request,response) => {
     const messages = db.prepare("SELECT * FROM messages").all();
     response.json(messages);
