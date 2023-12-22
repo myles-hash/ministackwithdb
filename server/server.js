@@ -14,7 +14,7 @@ app.get("/",(request,response) => {
 });
 
 
-get("/messages",(request,response) => {
+app.get("/messages",(request,response) => {
     const messages = db.prepare("SELECT * FROM messages").all();
     response.json(messages);
 });
