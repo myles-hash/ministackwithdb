@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS messages (
 
 db.prepare(`INSERT INTO messages (username, message) VALUES (?, ?)`).run(
     "Bingus",
-    "Meow"
+    "Hi"
   );

@@ -5,7 +5,7 @@ form.addEventListener("submit", async function(event){
     const formData = new FormData(form);
     const formValues = Object.fromEntries(formData);
 
-    const response = await fetch("http://localhost:8080/messages", {
+    const response = await fetch("https://messageboardserver.onrender.com/messages", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,7 +21,7 @@ form.addEventListener("submit", async function(event){
 });
 
 async function getMessages(){
-    const response = await fetch("http://localhost:8080/messages");
+    const response = await fetch("https://messageboardserver.onrender.com/messages");
     const message = await response.json();
     const messageContainer = document.getElementById("messageContainer");
     
